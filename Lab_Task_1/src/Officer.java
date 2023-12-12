@@ -22,7 +22,6 @@ public class Officer extends Employee {
         System.out.println("Before Rounded "+vacationLeave);
         System.out.println("Before Rounded "+sickLeave);
 
-        // Round to the nearest integer
         vacationLeave = Math.round(vacationLeave);
         sickLeave = Math.round(sickLeave);
         System.out.println("Rounded "+vacationLeave);

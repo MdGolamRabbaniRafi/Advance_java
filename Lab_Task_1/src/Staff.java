@@ -21,7 +21,6 @@ public class Staff extends Employee {
         double vacationLeave = ((daysInYear - joiningDay + 1) * totalVacationLeave) / daysInYear;
         double sickLeave = ((daysInYear - joiningDay + 1) * totalSickLeave) / daysInYear;
 
-        // Round to the nearest integer
         vacationLeave = Math.round(vacationLeave);
         sickLeave = Math.round(sickLeave);
 
