@@ -1,11 +1,9 @@
 package dev.domain;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Past;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 public class User {
 
@@ -14,17 +12,22 @@ public class User {
     private String fullname;
 
     @NotNull
-    @Past
+    @Age
     private LocalDate dob;
-
     private List<Quata> quata;
-    public List<Quata> getquata() {
-        return quata;
+    @NotNull
+    private String Country;
+    private Set<Quata> quataValues;
+
+    public Set<Quata> getQuataValues() {
+        return quataValues;
     }
 
-    public void setquata(List<Quata> quata) {
-        this.quata = quata;
+    public void setQuataValues(Set<Quata> quataValues) {
+        this.quataValues = quataValues;
     }
+
+
 
 
     public LocalDate getDob() {
@@ -42,8 +45,11 @@ public class User {
     private String email;
 
     @NotNull
-    @Size(min = 8)
+    @Min(1)
+    @Max(9999)
     private int id;
+
+    @NotNull
     private Gender gender;
     public Gender getGender() {
         return gender;
@@ -58,14 +64,31 @@ public class User {
     public User() {
     }
 
-    public User(String fullname, String email, int id,LocalDate dob) {
+    public User(String fullname, String email, int id,LocalDate dob,Gender gender,Set<Quata> quataValues, String Country) {
         this.fullname = fullname;
         this.email = email;
         this.id = id;
         this.dob=dob;
+        this.quataValues = quataValues;
+        this.Country=Country;
+        this.gender=gender;
+
 
 
     }
+    public User(String fullname, String email, int id,LocalDate dob, Gender gender, String Country) {
+        this.fullname = fullname;
+        this.email = email;
+        this.id = id;
+        this.dob=dob;
+        this.gender=gender;
+        this.quataValues = quataValues;
+        this.Country=Country;
+
+
+
+    }
+
 
     public String getFullname() {
         return fullname;
@@ -82,6 +105,13 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+    public void setCountry(String Country) {
+        this.Country = Country;
+    }
+    public String getCountry() {
+        return Country;
+    }
+
 
     public int getId() {
         return id;

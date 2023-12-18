@@ -1,29 +1,17 @@
 package dev.domain;
 
 public class Quata {
-    private int Id;
-    private String Name;
+    private String name;
 
-    Quata(int Id, String Name)
-    {
-        this.Id=Id;
-        this.Name=Name;
+    public Quata(String name) {
+        this.name = name;
     }
 
-    public void setId(int Id)
-    {
-        this.Id=Id;
+    public String getName() {
+        return name;
     }
-    public int getId(int Id)
-    {
-        return Id;
-    }
-    public void setName(String Name)
-    {
-        this.Name=Name;
-    }
-    public String getName(String Name)
-    {
-        return Name;
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

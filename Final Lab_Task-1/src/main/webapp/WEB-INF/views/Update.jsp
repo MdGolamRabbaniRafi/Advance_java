@@ -8,37 +8,29 @@
 <body>
 <h3>Registration Page</h3>
 
-<form:form method="post" action="CreateStudent" modelAttribute="user">
-
-<label>id</label>
-<form:input type="text" path="id" id="id"/>
-<form:errors path="id"/>
-<br><br>
+<form:form method="post" action="UpdateStudent" modelAttribute="user">
 
 <label>Full Name</label>
 <form:input path="fullname" id="fullname"/>
 <form:errors path="fullname"/>
-
 <br><br>
 
 <label>Email</label>
 <form:input path="email" id="email"/>
 <form:errors path="email"/>
-
 <br><br>
-
 
 <label>Gender:</label>
 <label><form:radiobutton path="gender" value="MALE" /> Male</label>
 <label><form:radiobutton path="gender" value="FEMALE" /> Female</label>
 <label><form:radiobutton path="gender" value="OTHER" /> Other</label>
-
-
 <br><br>
 
 <label>Date of Birth</label>
 <form:input type="date" path="dob" id="dob"/>
 <form:errors path="dob"/>
+<br><br>
+
 <form:checkbox path="quataValues" value="Disability" /> Disability
 <form:checkbox path="quataValues" value="Freedom_fighter" /> Freedom fighter
 <br><br>
@@ -52,10 +44,9 @@
 
 
 
-
 <br><br>
 
-<input type="submit" value="Register" />
+<input type="submit" value="Update" />
 
 </form:form>
 
