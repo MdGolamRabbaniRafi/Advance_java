@@ -8,7 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
-import             dev.service.UserService;
+import dev.service.UserService;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -31,16 +31,18 @@ public class FirstController {
     public void intiBinder(WebDataBinder webDataBinder) {
         StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
         webDataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
-
         DateFormatEditor dateFormatEditor = new DateFormatEditor();
         webDataBinder.registerCustomEditor(LocalDate.class, dateFormatEditor);
     }
 
     @RequestMapping("/registration")
     public String registration(Model model) {
-        model.addAttribute("user", new User());
+        User user = new User();
+        user.setCountry("Bangladesh");
+        model.addAttribute("user", user);
         return "registration";
     }
+
 
     @RequestMapping("/CreateStudent")
     public String CreateStudent(@Valid @ModelAttribute("user") User user, BindingResult bindingResult) throws SQLException, ClassNotFoundException {
@@ -49,6 +51,14 @@ public class FirstController {
         }
         else
         {
+            if(user.getQuataValues()!=null)
+            {
+                user.setQuataValues("Quata Available");
+            }
+            else
+            {
+                user.setQuataValues("N/A");
+            }
             UserService.create(user);
             return "confirm";
         }

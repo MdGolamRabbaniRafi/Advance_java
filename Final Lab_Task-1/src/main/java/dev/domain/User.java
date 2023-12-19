@@ -1,9 +1,8 @@
 package dev.domain;
 
+
 import javax.validation.constraints.*;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Set;
 
 public class User {
 
@@ -14,16 +13,14 @@ public class User {
     @NotNull
     @Age
     private LocalDate dob;
-    private List<Quata> quata;
     @NotNull
     private String Country;
-    private Set<Quata> quataValues;
-
-    public Set<Quata> getQuataValues() {
+    private String quataValues;
+    public String getQuataValues() {
         return quataValues;
     }
 
-    public void setQuataValues(Set<Quata> quataValues) {
+    public void setQuataValues(String quataValues) {
         this.quataValues = quataValues;
     }
 
@@ -64,7 +61,7 @@ public class User {
     public User() {
     }
 
-    public User(String fullname, String email, int id,LocalDate dob,Gender gender,Set<Quata> quataValues, String Country) {
+    public User(String fullname, String email, int id,LocalDate dob,Gender gender,String quataValues, String Country) {
         this.fullname = fullname;
         this.email = email;
         this.id = id;
@@ -76,7 +73,7 @@ public class User {
 
 
     }
-    public User(String fullname, String email, int id,LocalDate dob, Gender gender, String Country) {
+  /*  public User(String fullname, String email, int id,LocalDate dob, Gender gender, String Country) {
         this.fullname = fullname;
         this.email = email;
         this.id = id;
@@ -87,7 +84,7 @@ public class User {
 
 
 
-    }
+    }*/
 
 
     public String getFullname() {

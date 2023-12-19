@@ -39,14 +39,15 @@
 <label>Date of Birth</label>
 <form:input type="date" path="dob" id="dob"/>
 <form:errors path="dob"/>
-<form:checkbox path="quataValues" value="Disability" /> Disability
-<form:checkbox path="quataValues" value="Freedom_fighter" /> Freedom fighter
+<br><br>
+<input type="checkbox" name="quataValues" value="available" /> Quata available
 <br><br>
 
 <form:select path="Country">
-    <form:option value="Bangladesh" label="Bangladesh"/>
     <form:option value="India" label="India"/>
     <form:option value="England" label="England"/>
+    <form:option value="Bangladesh" label="Bangladesh"/>
+
 </form:select>
 
 

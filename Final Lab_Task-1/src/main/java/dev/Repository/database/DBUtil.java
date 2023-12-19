@@ -3,7 +3,6 @@ package dev.Repository.database;//
 // (powered by FernFlower decompiler)
 //
 
-import dev.domain.Quata;
 import dev.domain.User;
 import org.springframework.stereotype.Repository;
 
@@ -28,9 +27,9 @@ public class DBUtil {
             String Email = resultSet.getString("Email");
             LocalDate DOB = LocalDate.parse(resultSet.getString("DOB"));
             User.Gender Gender = User.Gender.valueOf(resultSet.getString("Gender"));
-            String Quata = resultSet.getString("Quata");
+            String quata = resultSet.getString("Quata");
             String Country = resultSet.getString("Country");
-            User user = new User(fullName,Email,Id,DOB,Gender,Country);
+            User user = new User(fullName,Email,Id,DOB,Gender,quata,Country);
             return user;
         } else {
             return null;
@@ -45,7 +44,7 @@ public class DBUtil {
         preparedStatement.setString(3, user.getEmail());
         preparedStatement.setDate(4, Date.valueOf(user.getDob()));
         preparedStatement.setString(5, String.valueOf(user.getGender()));
-        preparedStatement.setString(6, user.getQuataValues().toString());
+        preparedStatement.setString(6, user.getQuataValues());
         preparedStatement.setString(7, user.getCountry());
 
         preparedStatement.execute();
@@ -86,10 +85,10 @@ public class DBUtil {
             String Email = resultSet.getString("Email");
             LocalDate DOB = LocalDate.parse(resultSet.getString("DOB"));
             User.Gender Gender = User.Gender.valueOf(resultSet.getString("Gender"));
-            String Quata = resultSet.getString("Quata");
+            String quata = resultSet.getString("Quata");
             String Country = resultSet.getString("Country");
 
-            User user = new User(fullName, Email, Id, DOB, Gender, Country);
+            User user = new User(fullName, Email, Id, DOB, Gender,quata, Country);
             userList.add(user);
         }
 

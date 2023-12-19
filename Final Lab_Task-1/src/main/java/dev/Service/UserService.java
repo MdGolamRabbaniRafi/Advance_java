@@ -17,7 +17,6 @@ public class UserService {
     }
 
     public static void create(User user) throws SQLException, ClassNotFoundException {
-        user.setFullname(user.getFullname().toUpperCase());
         DBUtil.create(user);
     }
 

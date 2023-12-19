@@ -31,8 +31,7 @@
 <form:errors path="dob"/>
 <br><br>
 
-<form:checkbox path="quataValues" value="Disability" /> Disability
-<form:checkbox path="quataValues" value="Freedom_fighter" /> Freedom fighter
+<input type="checkbox" name="quataValue" value="available" /> Quata available
 <br><br>
 
 <form:select path="Country">

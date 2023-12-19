@@ -9,11 +9,7 @@
 <p>Email: ${user.email}</p>
 <p>Gender: ${user.gender}</p>
 <p>DOB: ${user.dob}</p>
-<p> Quata:</p>
-
-<c:forEach var="quata" items="${user.quataValues}">
-    <p>${quata.name}</p>
-</c:forEach>
+<p> Quata:${user.quataValues}</p>
 
 <p>Country: ${user.country}</p>
 
